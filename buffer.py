@@ -129,6 +129,8 @@ if __name__ == '__main__':
     parser.add_argument('--mom', type=float, default=0, help='momentum')
     parser.add_argument('--l2', type=float, default=0, help='l2 regularization')
     parser.add_argument('--save_interval', type=int, default=10)
+    # Fix: Add teacher_label flag with a default value (False)
+    parser.add_argument('--teacher_label', action='store_true', help='Use teacher label in training', default=False)
 
     args = parser.parse_args()
     main(args)
