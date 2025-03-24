@@ -11,6 +11,9 @@ import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 def main(args):
+     #Ensure teacher_label attribute exists
+    if not hasattr(args, 'teacher_label'):
+        args.teacher_label = False
 
     args.dsa = True if args.dsa == 'True' else False
     args.device = 'cuda' if torch.cuda.is_available() else 'cpu'
